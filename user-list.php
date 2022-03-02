@@ -1,6 +1,6 @@
 <?php 
 require_once("dbconnect.php");
-$sql="SELECT * FROM users ORDER BY id DESC"; //ORDER由ID來排序，降序DESC ，升序ESC
+$sql="SELECT * FROM users WHERE valid=1 ORDER BY id DESC"; //ORDER由ID來排序，降序DESC ，升序ESC
 $result = $conn->query($sql);
 ?>
 <!doctype html>
@@ -55,7 +55,7 @@ $result = $conn->query($sql);
                       <td><?=$row["account"]?></td>
                       <td><?=$row["gender"]?></td>
                       <td><?=$row["phones"]?></td>
-                      <td><a class="btn btn info" href="user.php?id=<?=$row["id"]?>">詳細</a></td>
+                      <td><a class="btn btn-info" href="user.php?id=<?=$row["id"]?>">詳細</a></td>
                 </tr>
                         <?php endwhile; ?>
                         <?php else: ?>

@@ -15,7 +15,7 @@ $account=$_GET["account"];
 $password=$_GET["password"];
 if(empty($account)){
     echo"請輸入帳號";
-    header("location: for.php")
+    // header("location: for.php")
     exit;
 }
 if(empty($password)){

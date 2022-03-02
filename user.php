@@ -42,6 +42,10 @@ $row=$result->fetch_assoc();
                 <td><?=$row["phones"]?></td>
               </tr>
               <tr>
+                <td>intro</td>
+                <td><?=$row["intro"]?></td>
+              </tr>
+              <tr>
                 <td>create time</td>
                 <td><?=$row["create_time"]?></td>
               </tr>

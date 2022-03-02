@@ -14,14 +14,14 @@ require_once("dbconnect.php");
 //      }
 
 $account=$_POST["account"];
-$password=$_POSTmb5["password"];
+$password=md5($_POST["password"]);
 $gender=$_POST["gender"];
 // echo $gender;
 $phones=$_POST["phones"];
 
 
 $phones=array_filter($phones); //把陣列空的資料移出。
-$phones_string=implode(', ', $phones); //implode=js的join
+$phones_string=implode(',', $phones); //implode=js的join
 // var_dump($phones);
 
 // if(empty($account)){
@@ -37,8 +37,8 @@ $phones_string=implode(', ', $phones); //implode=js的join
 $now=date('Y-m-d H:i:s');
 
 
-$sql="INSERT INTO users (account, password, gender, phones, create_time)
-	VALUES ('$account',  '$password', '$gender', '$phones_string', '$now')";
+$sql="INSERT INTO users (account, password, gender, phones, create_time, valid)
+	VALUES ('$account',  '$password', '$gender', '$phones_string', '$now', 1)";
 
 // echo $sql
 
