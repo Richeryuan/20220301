@@ -1,9 +1,14 @@
 <?php
-$name=$_GET["name"];
-$email=$_GET["email"];
+// $name=$_GET["name"];
+// $email=$_GET["email"];
+
+$name=$_POST["name"];
+$email=$_POST["email"];
+
+
 $data=[
     "name"=>$name,
-    "email"=>$email,
+    "email"=>$email
 ];
 
 // var_dump($data);

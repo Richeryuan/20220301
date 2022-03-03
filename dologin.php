@@ -22,7 +22,6 @@ if ($conn->query($sql) === TRUE) {
     $_SESSION["user"]=$data;
     unset($_SESSION["error"]);
     var_dump($_SESSION["user"]);
-    header("location: dashboard.php");
   }else{
     echo "登入失敗";
   if(isset($_SESSION["error"] ["times"])){
